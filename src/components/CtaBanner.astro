@@ -1,0 +1,23 @@
+---
+const { 
+  titleCta = "Copy",
+  copyCta = "Lorem ipsum",
+  endCopy = "Lorem ipsum",
+  backgroundColor = "#fff", 
+  textColor = "#000" 
+} = Astro.props;
+
+import '../styles/_ctabanner.sass';
+---
+
+<section class="ctaBanner" style={`background-color: ${backgroundColor}; color: ${textColor};`}>
+  <div class="container">
+    <div class="ctaBanner--copy text-center">
+      <h2 class="text-uppercase">{titleCta}</h2>
+      <p class="mx-auto py-2">
+        {copyCta}
+      </p>
+      <h3>{endCopy}</h3>
+    </div>
+  </div>
+</section>

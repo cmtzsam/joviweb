@@ -1,0 +1,21 @@
+@use 'variables' as *
+
+.simpleGridIcons
+  background-color: #eeeeee
+  padding: 50px 0 10px
+  &--card
+    width: 100%
+    padding-bottom: 40px
+    max-width: 200px
+    @include maxMobile
+      max-width: 150px
+  &--icon
+    @include flexCenter
+  &--copy
+    text-align: center
+    color: var(--primary-color)
+    h2
+      font-size: 20px
+      padding-top: 10px
+      @include maxMobile
+        font-size: 15px

@@ -1,0 +1,25 @@
+---
+const { frontmatter } = Astro.props;
+import Layout from '../layouts/Layout.astro';
+---
+<Layout title={frontmatter.title}>
+<h1>{frontmatter.title}</h1>
+<p>Writtesn by {frontmatter.author}</p>
+<p>Published on: {frontmatter.pubDate.toString().slice(0,10)}</p>
+<p>{frontmatter.description}</p>
+{frontmatter.hola ? (
+  <>
+    <hr />
+    <p>{frontmatter.hola}</p>
+    <hr />
+  </>
+) : frontmatter.adios ? (
+  <p>{frontmatter.adios}</p>
+) : (
+  <p>BYE</p>
+)}
+{frontmatter.image && (
+  <img src={frontmatter.image.url} alt={frontmatter.title} style="max-width:100%;height:auto;" />
+)}
+<slot />
+</Layout>

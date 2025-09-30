@@ -1,0 +1,50 @@
+---
+import { Image } from 'astro:assets';
+import iconService1 from '../assets/service-1.png';
+import iconService2 from '../assets/service-2.png';
+import iconService3 from '../assets/service-3.png';
+import iconService4 from '../assets/service-4.png';
+import iconService5 from '../assets/service-5.png';
+import iconService6 from '../assets/service-6.png';
+
+const arrayServices = [
+  { image_icon: iconService1, title: "Recarga de Extintores", desc: "Mantenimiento y recarga profesional de extintores para asegurar su funcionamiento óptimo..." },
+  { image_icon: iconService2, title: "Señalización Industrial", desc: "Diseño e instalación de señales de seguridad y rutas de evacuación conforme a normativas..." },
+  { image_icon: iconService3, title: "Mangueras e Hidrantes", desc: "Venta e instalación de sistemas de abastecimiento y control de incendios para espacios industriales..." },
+  { image_icon: iconService4, title: "Gabinetes y Equipos de Bomberos", desc: "Suministro de gabinetes, herramientas y equipos especializados para intervención inmediata..." },
+  { image_icon: iconService5, title: "Consultoría y Capacitación", desc: "Asesoría técnica y cursos especializados para prevenir riesgos y actuar ante emergencias..." },
+  { image_icon: iconService6, title: "Sistemas Contra Incendios", desc: "Diseño e instalación de sistemas fijos para detección, alarma y supresión de incendios..." },
+]
+
+import '../styles/_servicesblock.sass';
+---
+<section class="servicesBlock">
+  <div class="container">
+    <h2 class="text-white text-center text-uppercase py-5">Nuestros Servicios</h2>
+    <div class="row row-gap-5">
+      { arrayServices.map( (item)  => (
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="servicesBlock--card mx-auto">
+            <div class="servicesBlock--card-icon text-center">
+              <Image
+                src={item.image_icon}
+                alt={item.title}
+                class={"d-block mx-auto"}
+              />            
+            </div>
+            <div class="servicesBlock--card-copy text-center pt-3">
+              <h2 class="text-white fw-normal text-uppercase">{item.title}</h2>
+              <p class="text-white fw-light pt-1">
+                {item.desc}
+              </p>
+              <button class="btn text-white fw-light">
+                VER SERVICIO
+                <i class="bi bi-chevron-double-down"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

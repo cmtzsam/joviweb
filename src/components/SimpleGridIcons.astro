@@ -1,0 +1,44 @@
+---
+import { Image } from 'astro:assets';
+import iconFire from '../assets/icon-fire.png';
+import iconConsulta from '../assets/icon-consulta.png';
+import iconSenalizacion from '../assets/icon-senalizacion.png';
+import iconLlamanos from '../assets/icon-llamanos.png';
+
+const arrayIcons = [
+  { image_icon: iconFire, title: "Equipo contra incendio" },
+  { image_icon: iconConsulta, title: "Consultoría & Capacitación" },
+  { image_icon: iconSenalizacion, title: "Señalización industrial" },
+  { image_icon: iconLlamanos, title: "Llámanos servicio 24/7" },
+]
+
+import '../styles/_simplegridicons.sass';
+
+---
+
+<section class="simpleGridIcons" >
+  <div class="container">
+
+    <div class="row">
+      { arrayIcons.map( (item)  => (
+        <div class="col-6 col-md-6 col-lg-3 ">
+          <div class="simpleGridIcons--card mx-auto">
+            <div class="simpleGridIcons--icon">
+              <Image
+                src={item.image_icon}
+                alt={item.title}
+                class={"d-block mx-auto"}
+              />            
+            </div>
+            <div class="simpleGridIcons--copy">
+              <h2 class="text-uppercase">{item.title}</h2>
+            </div>
+          </div>
+        </div>
+      ))}
+      
+
+    </div>
+
+  </div>
+</section>

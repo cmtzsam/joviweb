@@ -1,0 +1,31 @@
+---
+import { Image } from 'astro:assets';
+import imageNosotros from '../assets/image-nosotros.jpg';
+
+import '../styles/_aboutblock.sass';
+---
+<section class="aboutBlock py-4" >
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <div class="aboutBlock--copy">
+          <h2 class="text-uppercase">Sobre nosotros</h2>
+          <p class="pt-3">En JOVI Extintores, somos una empresa orgullosamente regiomontana que desde 1996 ofrece soluciones y servicios integrales contra incendio. Nacimos en Monterrey, Nuevo León, con la firme misión de salvaguardar la seguridad de nuestros clientes, brindando atención personalizada y productos de la más alta calidad.</p>
+          <p class="pt-3">A lo largo de los años, hemos consolidado nuestra experiencia en el sector, desarrollando una amplia gama de servicios que cumplen con las normativas nacionales e internacionales. Nos especializamos en la venta, mantenimiento y recarga de extintores, así como en la instalación de sistemas contra incendio, señalización y asesoría técnica especializada.</p>
+          <p class="pt-3">Nuestro compromiso es proteger lo que más valoras, con un equipo profesional, capacitado y enfocado en ofrecer soluciones confiables, eficaces y a la medida de tus necesidades.</p>
+          <p class="pt-3">En JOVI Extintores, más que equipos, ofrecemos confianza, respaldo y tranquilidad.</p>
+          <h3 class="pt-4">"Más vale perder un minuto en la vida, <br /> que la vida en un minuto."</h3>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <div class="aboutBlock--picture pt-5">
+          <Image
+            src={imageNosotros}
+            alt={'Sobre nosotros'}
+            class={"d-block mx-auto"}
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

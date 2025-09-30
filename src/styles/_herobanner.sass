@@ -1,0 +1,57 @@
+@use 'variables' as *
+
+.heroBanner
+  height: 100vh
+  min-height: 400px
+  display: flex
+  align-items: center
+  background-position: center center
+  background-size: cover
+  background-repeat: no-repeat  
+  background-image: url('/images/herobanner.jpg')
+  position: relative
+  &::before
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 1
+    background-color: rgba(0,0,0,0.25)
+    @include maxTablet
+      background-color: rgba(0,0,0,0.7)
+  @include maxTablet
+    background-image: url('/images/herobanner-mobile.jpg')
+    max-height: 650px 
+  @include minDesktop1280
+    max-height: 840px
+    padding: 0
+  .container
+    z-index: 2
+  &--text
+    width: 100%
+    max-width: 330px
+    @include maxTablet
+      text-align: center
+      margin: 0 auto
+    h1, h2
+      color: white
+    h2
+      font-weight: bold
+      font-size: 40px
+      @include maxMobile
+        font-size: 30px
+    h1
+      font-weight: normal
+      line-height: 1.5
+      font-size: 23px
+      padding: 15px 0 20px
+      @include maxMobile
+        font-size: 20px
+  &--btns
+    display: flex
+    align-items: center
+    gap: 0 25px
+    @include maxMobile
+      justify-content: center

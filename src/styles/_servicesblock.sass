@@ -1,0 +1,22 @@
+@use 'variables' as *
+
+.servicesBlock
+  background-color: var(--primary-color)
+  padding-bottom: 60px
+  h2
+    @include minDesktop1280
+      font-size: 48px
+
+  &--card
+    width: 100%
+    max-width: 255px
+    padding: 20px 15px
+    border-radius: 10px
+    box-shadow: 0px 3px 9.96px 2.04px rgba(47, 17, 19, 0.69)
+    &-copy
+      h2
+        font-size: 20px
+      p
+        font-size: 15px
+
+        

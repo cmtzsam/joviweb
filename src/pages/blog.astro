@@ -1,0 +1,15 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BlogPost from '../components/BlogPost.astro';
+
+const allPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+const pageTitle = "My Astro Learning Blog";
+---
+
+<Layout title={pageTitle} >
+  <h1>Blog JOVI</h1>
+  <p>This is the blog page of the JOVI website.</p>
+    <ul>
+      {allPosts.map((post: any) => <BlogPost url={post.url} title={post.frontmatter.title} />)}
+    </ul>  
+</Layout>
