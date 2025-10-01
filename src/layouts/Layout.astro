@@ -9,7 +9,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 
 import '../styles/style.scss';
-
 ---
 <!doctype html>
 <html lang="es-MX">
@@ -19,17 +18,14 @@ import '../styles/style.scss';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{ title }</title>
-
 	</head>
-	<body  >
+	<body  >	
 		<Header />
 		<main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-smooth-scroll="true" tabindex="0">
 			<slot />
 		</main>
-		<script type="module">
-			// Carga solo en el cliente. Incluye Popper.
-			import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
-		</script>		
+		<script>
+			import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+		</script>				
 	</body>
 </html>
-
