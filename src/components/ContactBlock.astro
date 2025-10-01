@@ -1,0 +1,81 @@
+---
+import { Image } from 'astro:assets';
+import imageContacto from '../assets/img-contact.png';
+
+import '../styles/_contactblock.sass'
+---
+
+<section class="contactBlock" id="scrollspyContacto">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="contactBlock--content">
+          <div class="contactBlock--copy text-center text-white mx-auto">
+            <h2 class="text-uppercase">¿Necesitas atención especializada?</h2>
+            <p class="py-3 fs-3 fw-light" >
+              Tenemos expertos disponibles los 7 días de la semana.
+            </p>        
+          </div>
+          <Image 
+            src={imageContacto}
+            alt={"Contáctanos"}
+            class={'img-fluid d-block mx-auto'}
+          />
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-lg-6">
+        <div class="contactBlock--content">
+          <div class="contactBlock--copy text-center text-white mx-auto">
+            <h2 >Extintores Jovi </h2>
+            <p class="py-3 fs-4 fw-light" >
+              Tiene mas de 20 años liderando en equipo de seguridad contra incendios.
+            </p>
+            <h3 
+              class="fs-5 border border-2 border-light rounded-pill py-2 my-2 mx-auto pillTitle"
+            >
+              ¿Qué esperas para <br /> solicitar información?
+            </h3>
+          </div>
+          <div class="contactBlock--form mx-auto pt-4">
+            <form class="row g-3">
+              <div class="col-md-6">
+                <label for="inputNombre" class="form-label">Nombre:</label>
+                <input type="text" class="form-control rounded-pill border border-2 border-white " id="inputNombre">
+              </div>
+              <div class="col-md-6">
+                <label for="inputApellido" class="form-label">Apellido:</label>
+                <input type="text" class="form-control rounded-pill border border-2 border-white " id="inputApellido">
+              </div>
+              <div class="col-12">
+                <label for="inputEmail" class="form-label">Correo electrónico</label>
+                <input type="email" class="form-control rounded-pill border border-2 border-white " id="inputEmail" placeholder="name@example.com">
+              </div>            
+              <div class="col-12">
+                <label for="inputPhone" class="form-label">Teléfono</label>
+                <input type="tel" class="form-control rounded-pill border border-2 border-white " id="inputPhone" name="inputPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+              </div>            
+              <div class="col-12">
+                <label for="inputMensaje" class="form-label">Mensaje</label>
+                <textarea class="form-control rounded-4 border border-2 border-white " id="inputMensaje" rows="3"></textarea>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <label class="form-check-label" for="gridCheck">
+                    Acepto las políticas de privacidad.
+                  </label>
+                </div>
+              </div>
+              <div class="col-12 text-center">
+                <button type="submit" class="btn btn-light btn-lg shadow-sm color-primary fw-bold text-uppercase rounded-pill border-0 btnSendForm">
+                  Enviar mensaje
+                  <i class="bi bi-chevron-double-right"></i>
+                </button>              
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

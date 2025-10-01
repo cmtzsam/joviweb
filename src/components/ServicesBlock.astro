@@ -18,33 +18,36 @@ const arrayServices = [
 
 import '../styles/_servicesblock.sass';
 ---
-<section class="servicesBlock">
+<section class="servicesBlock" id={"scrollspyServicios"} >
   <div class="container">
     <h2 class="text-white text-center text-uppercase py-5">Nuestros Servicios</h2>
-    <div class="row row-gap-5">
-      { arrayServices.map( (item)  => (
-        <div class="col-12 col-md-6 col-lg-4">
-          <div class="servicesBlock--card mx-auto">
-            <div class="servicesBlock--card-icon text-center">
-              <Image
-                src={item.image_icon}
-                alt={item.title}
-                class={"d-block mx-auto"}
-              />            
-            </div>
-            <div class="servicesBlock--card-copy text-center pt-3">
-              <h2 class="text-white fw-normal text-uppercase">{item.title}</h2>
-              <p class="text-white fw-light pt-1">
-                {item.desc}
-              </p>
-              <button class="btn text-white fw-light">
-                VER SERVICIO
-                <i class="bi bi-chevron-double-down"></i>
-              </button>
+    <div class="servicesBlock--grid mx-auto">
+      <div class="row row-gap-5">
+        { arrayServices.map( (item)  => (
+          <div class="col-12 col-md-6 col-lg-4">
+            <div class="servicesBlock--card mx-auto">
+              <div class="servicesBlock--card-icon text-center">
+                <Image
+                  src={item.image_icon}
+                  alt={item.title}
+                  class={"d-block mx-auto"}
+                />            
+              </div>
+              <div class="servicesBlock--card-copy text-center pt-3">
+                <h2 class="text-white fw-normal text-uppercase">{item.title}</h2>
+                <p class="text-white fw-light pt-1">
+                  {item.desc}
+                </p>
+                <button class="btn text-white fw-light">
+                  VER SERVICIO
+                  <i class="bi bi-chevron-double-down"></i>
+                </button>
+              </div>
             </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
+    </div>
     </div>
   </div>
 </section>

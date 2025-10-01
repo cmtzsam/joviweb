@@ -21,11 +21,15 @@ import '../styles/style.scss';
 		<title>{ title }</title>
 
 	</head>
-	<body >
-		<!-- <Header /> -->
-		<main >
+	<body  >
+		<Header />
+		<main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-smooth-scroll="true" tabindex="0">
 			<slot />
 		</main>
+		<script type="module">
+			// Carga solo en el cliente. Incluye Popper.
+			import '../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js';
+		</script>		
 	</body>
 </html>
 

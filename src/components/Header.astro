@@ -1,15 +1,56 @@
 ---
-import ThemeIcon from "./ThemeIcon.astro"
+import { Image } from 'astro:assets';
+import Logo from '../assets/logo.png';
+
+import HeaderLinks from './HeaderLinks.astro';
+
+import '../styles/_mainheader.sass'
+
 ---
+<header class="position-fixed w-100 mainHeader" id="mainHeader" >
+  <div class="container">
+    <nav id="navbar-example2" class="navbar px-3 mainHeader--nav">
+      <a class="navbar-brand" href="#">
+        <Image
+          src={Logo}
+          alt={"JOVI"}
+        >
+      </a>
+      <HeaderLinks />
+    </nav>
 
-<header class="bg-pink-300">
-
-  <div class="w-7xl mx-auto flex items-center justify-center py-3">
-    <ThemeIcon />
-    <nav style="padding-left: 20px;">
-      <a href="/">Home</a>
-      <a href="/about">About</a>
-      <a href="/blog">Blog</a>
-    </nav>  
+    <div id="navbarMobile">
+      <nav class="navbar" >
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMobileTarget" aria-controls="navbarMobileTarget" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-list text-white fs-2"></i>
+          </button>
+        </div>
+      </nav>
+    </div>    
   </div>
+
+  <div class="container">
+    <div class="collapse" id="navbarMobileTarget">
+      <div class="p-4 navbarMobile--content">
+        <HeaderLinks />
+      </div>
+    </div>  
+  </div>  
+  
 </header>
+
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const mainHeader = document.querySelector('#mainHeader');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 0) {
+        mainHeader.classList.add('active');
+      } else {
+        mainHeader.classList.remove('active');
+      }
+    });
+  });
+</script>

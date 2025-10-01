@@ -1,0 +1,43 @@
+@use 'variables' as *
+
+.mainHeader
+  z-index: 99
+  @include maxTabletLandscape
+    background-color: rgba( 0,0,0,0.9 )
+  .container  
+    @include maxTabletLandscape
+      @include flexCenter
+      justify-content: space-between
+  &.active
+    background-color: rgba( 0,0,0,0.75 )
+  .nav-pills
+    .nav-item
+      .nav-link
+        span
+          border-bottom: 1px solid transparent
+        &.active
+          background-color: transparent
+          span
+            border-color: white
+  .mainHeader--nav
+    @include maxTabletLandscape
+      .nav
+        display: none
+  #navbarMobile
+    display: none
+    @include maxTabletLandscape
+      display: block
+    .navbar-toggler
+      background-color: var(--primary-color)
+      width: 40px
+      height: 40px
+      padding: 2.5px
+      border-radius: 2px
+      @include flexCenter
+  #navbarMobileTarget    
+    .navbarMobile--content
+      ul
+        flex-flow: column
+        li
+          display: block
+          width: 100%

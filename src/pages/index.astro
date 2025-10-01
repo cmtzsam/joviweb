@@ -6,14 +6,16 @@ import AboutBlock from '../components/AboutBlock.astro';
 import CtaBanner from '../components/CtaBanner.astro';
 import ServicesBlock from '../components/ServicesBlock.astro';
 import EquiposBlock from '../components/EquiposBlock.astro';
-
+import ClientsBlock from '../components/ClientsBlock';
+import GallerySection from '../components/GallerySection';
+import ContactBlock from '../components/ContactBlock.astro';
 // import Header from '../components/Header.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Homepage">
+<Layout title="JOVI">
   <HeroBanner />
   <SimpleGridIcons />
   <AboutBlock />
@@ -27,19 +29,22 @@ import EquiposBlock from '../components/EquiposBlock.astro';
     endCopy="¡Será un placer atenderte!"
   />
 
+  <ClientsBlock  client:load />
+  <GallerySection  client:load />
+  <ContactBlock />
   <section class="mapBlock">
     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230074.67247781364!2d-100.6068054132812!3d25.707179999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629508ecc46295%3A0xc9b5678ad21905fb!2sJOVI%20Equipos%20y%20Sistemas%20Contra%20Incendio%20Venta%20y%20Recarga!5e0!3m2!1ses-419!2smx!4v1759196446539!5m2!1ses-419!2smx" width="600" height="345" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </section>
   <section class="endlinered">
     <div class="container">
       <div class="row justify-content-center align-items-center">
-        <div class="col-lg-7">
+        <div class="col-12 col-lg-7">
           <p>
             Contáctanos hoy mismo para conocer todos los servicios, <br>
             en breve uno de nuestros asesores te brindará mas información.
           </p>
         </div>
-        <div class="col-lg-3">
+        <div class="col-12 col-lg-4 text-center">
           <a class="btn btn-danger bg-white btn-lg fw-bold text-transform text-danger">
             <i class="bi bi-plus-lg"></i>
             Ponerme en contacto
@@ -48,8 +53,5 @@ import EquiposBlock from '../components/EquiposBlock.astro';
       </div>
     </div>
   </section>
-
-
-
 
 </Layout>
