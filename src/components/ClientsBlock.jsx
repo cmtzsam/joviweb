@@ -6,9 +6,25 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-import '../styles/_gallerysection.sass'
+import '../styles/_gallerysection.sass';
 
-const IMAGES = Array.from({length:8}, (_,i)=>`https://placehold.co/200?text=Logo+${i+1}`);
+import client1 from '../assets/cliente-1.png';
+// import client2 from '../assets/cliente-2.png';
+import client3 from '../assets/cliente-3.png';
+import client4 from '../assets/cliente-4.png';
+import client5 from '../assets/cliente-5.png';
+import client6 from '../assets/cliente-6.png';
+import client7 from '../assets/cliente-7.png';
+
+const IMAGES = [
+  client1,
+  // client2,
+  client3,
+  client4,
+  client5,
+  client6,
+  client7,
+];
 
 export default function ClientsBlock() {
   const swiperRef = useRef(null);
@@ -52,29 +68,28 @@ export default function ClientsBlock() {
   }, []);
 
   return (
-    <section class="clientsGallery  pb-5" id="scrollspyClientes" >
-      <h2 class="text-center text-uppercase py-4 color-primary">
+    <section className="clientsGallery pb-5" id="scrollspyClientes">
+      <h2 className="text-center text-uppercase pt-5 pb-1 color-primary">
         Nuestros clientes
       </h2>
       <div className="container">
-        <div class="swiper" ref={swiperRef} >
-          <div class="swiper-wrapper">
-            {IMAGES.map((src, i) => (
-              <div class="swiper-slide" key={i}>
-                <div className="text-center">
-                  <img src={src} alt={`Logo ${i + 1}`}  />
+        <div className="swiper" ref={swiperRef}>
+          <div className="swiper-wrapper">
+            {IMAGES.map((imagen, i) => (
+              <div className="swiper-slide" key={i}>
+                <div className="clientsGallery--item text-center">
+                  <img src={imagen.src} alt={`Logo ${i + 1}`} />
                 </div>
               </div>
             ))}
           </div>
-          
-          <div className="globalNavigation--navigation  ">
+
+          <div className="globalNavigation--navigation">
             <div className="globalNavigation--navBtns">
-              <div class="globalNavigation--nav swiper-button-prev clientsPrev "></div>
-              <div class="globalNavigation--nav swiper-button-next clientsNext "></div>
+              <div className="globalNavigation--nav swiper-button-prev clientsPrev"></div>
+              <div className="globalNavigation--nav swiper-button-next clientsNext"></div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

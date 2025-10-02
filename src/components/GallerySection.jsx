@@ -8,7 +8,31 @@ import 'swiper/css/pagination';
 
 import '../styles/_gallerysection.sass'
 
-const IMAGES = Array.from({length:8}, (_,i)=>`https://placehold.co/380x275?text=Logo+${i+1}`);
+import imgGalley_1 from '../assets/galeria-1.png';
+import imgGalley_2 from '../assets/galeria-2.png';
+import imgGalley_3 from '../assets/galeria-3.png';
+import imgGalley_4 from '../assets/galeria-4.png';
+import imgGalley_5 from '../assets/galeria-5.png';
+import imgGalley_6 from '../assets/galeria-6.png';
+import imgGalley_7 from '../assets/galeria-7.png';
+import imgGalley_8 from '../assets/galeria-8.png';
+import imgGalley_9 from '../assets/galeria-9.png';
+import imgGalley_10 from '../assets/galeria-10.png';
+import imgGalley_11 from '../assets/galeria-11.png';
+
+const IMAGES_GALLERY = [
+  imgGalley_1,
+  imgGalley_2,
+  imgGalley_3,
+  imgGalley_4,
+  imgGalley_5,
+  imgGalley_6,
+  imgGalley_7,
+  imgGalley_8,
+  imgGalley_9,
+  imgGalley_10,
+  imgGalley_11  
+]
 
 export default function GallerySection() {
   const swiperRef = useRef(null);
@@ -22,6 +46,7 @@ export default function GallerySection() {
       modules: [Navigation, Pagination],
       slidesPerView: 5,
       spaceBetween: 0,
+      centeredSlides: true,
       loop: true,
       navigation: {
         nextEl: el.querySelector('.galleryNext'),
@@ -30,20 +55,16 @@ export default function GallerySection() {
       pagination: false,
       breakpoints: {
         320: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+          slidesPerView: 1
         },
         480: {
-          slidesPerView: 1,
-          spaceBetween: 10,
+          slidesPerView: 1
         },
         768: {
-          slidesPerView: 3,
-          spaceBetween: 10,
+          slidesPerView: 3
         },
         1024: {
-          slidesPerView: 4,
-          spaceBetween: 10,
+          slidesPerView: 4
         },
       },
     });
@@ -58,16 +79,16 @@ export default function GallerySection() {
       </h2>
       <div class="swiper" ref={swiperRef} >
         <div class="swiper-wrapper">
-          {IMAGES.map((src, i) => (
+          {IMAGES_GALLERY.map((imagen, i) => (
             <div class="swiper-slide gallerySection--item" key={i}>
               <div className="text-center">
-                <img src={src} alt={`Logo ${i + 1}`}  />
+                <img src={imagen.src} alt={`Logo ${i + 1}`}  />
               </div>
             </div>
           ))}
         </div>
-        <div class="swiper-button-prev globalNavigation--circleNav galleryNext "></div>
-        <div class="swiper-button-next globalNavigation--circleNav galleryPrev "></div>
+        <div class="swiper-button-next globalNavigation--circleNav galleryNext "></div>
+        <div class="swiper-button-prev globalNavigation--circleNav galleryPrev "></div>
       </div>
     </section>
   );
