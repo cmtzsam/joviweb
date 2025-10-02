@@ -1,0 +1,61 @@
+@use 'variables' as *
+
+.footerBlock
+  &--upperFoot
+    background-color: #343638
+    @media (min-width: 991px)
+      padding-bottom: 40px 
+    ul
+      padding: 0
+      margin: 0
+      li
+        margin-bottom: 10px
+        color: #898989
+        position: relative
+        list-style: none
+        &::before
+          content: "\f285"
+          position: relative
+          display: inline-block
+          margin-right: 5px
+          font-family: bootstrap-icons !important
+          font-style: normal
+          font-weight: normal !important
+          font-variant: normal
+          font-size: 13px
+        &:last-child
+          margin-bottom: 0
+        &:hover
+          color: white
+    a
+      text-decoration: none
+      color: inherit
+    h3, h4
+      color: white
+    p
+      color: #898989
+      strong
+        color: white
+  &--info
+    @media (max-width: 991px)
+        padding: 0 0 30px
+  &--endFooter
+    background-color: #191b1c
+    height: 75px
+    @include maxMobile
+      height: 40px
+    p
+      color: #808080
+      font-size: 14px
+      @include maxMobile
+        font-size: 12px
+        text-align: center
+        margin: 0 auto
+  #formBoletin
+    max-width: 100%
+    .form-control
+      background-color: #1d1e1f
+      font-weight: normal
+      padding: 10px 15px
+      &::placeholder
+        color: rgba(255,255,255,0.25)
