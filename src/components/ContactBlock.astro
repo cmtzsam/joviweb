@@ -1,6 +1,9 @@
 ---
+// import stays the same
 import { Image } from 'astro:assets';
 import imageContacto from '../assets/img-contact.png';
+
+import 'sweetalert2/src/sweetalert2.scss'
 
 import '../styles/_contactblock.sass'
 ---
@@ -12,11 +15,11 @@ import '../styles/_contactblock.sass'
         <div class="contactBlock--content">
           <div class="contactBlock--copy text-center text-white mx-auto">
             <h2 class="text-uppercase">¿Necesitas atención especializada?</h2>
-            <p class="py-3 fs-3 fw-light" >
+            <p class="py-3 fs-3 fw-light">
               Tenemos expertos disponibles los 7 días de la semana.
-            </p>        
+            </p>
           </div>
-          <Image 
+          <Image
             src={imageContacto}
             alt={"Contáctanos"}
             class={'img-fluid d-block mx-auto'}
@@ -26,51 +29,105 @@ import '../styles/_contactblock.sass'
       <div class="col-12 col-md-6 col-lg-6">
         <div class="contactBlock--content">
           <div class="contactBlock--copy text-center text-white mx-auto">
-            <h2 >Extintores Jovi </h2>
-            <p class="py-3 fs-4 fw-light" >
-              Tiene mas de 20 años liderando en equipo de seguridad contra incendios.
+            <h2>Extintores Jovi</h2>
+            <p class="py-3 fs-4 fw-light">
+              Tiene más de 20 años liderando en equipo de seguridad contra incendios.
             </p>
-            <h3 
+            <h3
               class="fs-5 border border-2 border-light rounded-pill py-2 my-2 mx-auto pillTitle"
             >
               ¿Qué esperas para <br /> solicitar información?
             </h3>
           </div>
           <div class="contactBlock--form mx-auto pt-4">
-            <form class="row g-3">
+            <form
+              id="contactForm"
+              action="https://formspree.io/f/xkgqzpek"
+              method="POST"
+              class="row g-3"
+              novalidate
+            >
               <div class="col-md-6">
                 <label for="inputNombre" class="form-label">Nombre:</label>
-                <input type="text" class="form-control rounded-pill border border-2 border-white " id="inputNombre">
+                <input
+                  type="text"
+                  class="form-control rounded-pill border border-2 border-white"
+                  id="inputNombre"
+                  name="name"
+                  required
+                />
+                <div class="invalid-feedback">Por favor ingresa tu nombre.</div>
               </div>
               <div class="col-md-6">
                 <label for="inputApellido" class="form-label">Apellido:</label>
-                <input type="text" class="form-control rounded-pill border border-2 border-white " id="inputApellido">
+                <input
+                  type="text"
+                  class="form-control rounded-pill border border-2 border-white"
+                  id="inputApellido"
+                  name="apellido"
+                  required
+                />
+                <div class="invalid-feedback">Por favor ingresa tu apellido.</div>
               </div>
               <div class="col-12">
                 <label for="inputEmail" class="form-label">Correo electrónico</label>
-                <input type="email" class="form-control rounded-pill border border-2 border-white " id="inputEmail" placeholder="name@example.com">
-              </div>            
+                <input
+                  type="email"
+                  class="form-control rounded-pill border border-2 border-white"
+                  id="inputEmail"
+                  name="_replyto"
+                  placeholder="name@example.com"
+                  required
+                />
+                <div class="invalid-feedback">Por favor ingresa un correo válido.</div>
+              </div>
               <div class="col-12">
                 <label for="inputPhone" class="form-label">Teléfono</label>
-                <input type="tel" class="form-control rounded-pill border border-2 border-white " id="inputPhone" name="inputPhone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
-              </div>            
+                <input
+                  type="tel"
+                  class="form-control rounded-pill border border-2 border-white"
+                  id="inputPhone"
+                  name="phone"
+                  required
+                />
+                <div class="invalid-feedback">Por favor ingresa tu teléfono.</div>
+              </div>
               <div class="col-12">
                 <label for="inputMensaje" class="form-label">Mensaje</label>
-                <textarea class="form-control rounded-4 border border-2 border-white " id="inputMensaje" rows="3"></textarea>
+                <textarea
+                  class="form-control rounded-4 border border-2 border-white"
+                  id="inputMensaje"
+                  rows="3"
+                  name="message"
+                  required
+                ></textarea>
+                <div class="invalid-feedback">Por favor escribe un mensaje.</div>
               </div>
               <div class="col-12">
                 <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="gridCheck">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="gridCheck"
+                    name="acceptPolicy"
+                    required
+                  />
                   <label class="form-check-label" for="gridCheck">
                     Acepto las políticas de privacidad.
                   </label>
+                  <div class="invalid-feedback">
+                    Necesitas aceptar las políticas.
+                  </div>
                 </div>
               </div>
               <div class="col-12 text-center">
-                <button type="submit" class="btn btn-light btn-lg shadow-sm color-primary fw-bold text-uppercase rounded-pill border-0 btnSendForm">
+                <button
+                  type="submit"
+                  class="btn btn-light btn-lg shadow-sm color-primary fw-bold text-uppercase rounded-pill border-0 btnSendForm"
+                >
                   Enviar mensaje
                   <i class="bi bi-chevron-double-right"></i>
-                </button>              
+                </button>
               </div>
             </form>
           </div>
@@ -78,4 +135,119 @@ import '../styles/_contactblock.sass'
       </div>
     </div>
   </div>
+
+  <script>
+    import Swal from 'sweetalert2'
+    (function () {
+      const form = document.getElementById('contactForm');
+      const fields = [
+        { name: 'name', el: form.elements['name'], message: 'Por favor ingresa tu nombre.' },
+        { name: 'apellido', el: form.elements['apellido'], message: 'Por favor ingresa tu apellido.' },
+        // { name: '_replyto', el: form.elements['_replyto'], message: 'Por favor ingresa un correo válido.' },
+        { name: 'phone', el: form.elements['phone'], message: 'Por favor ingresa tu teléfono.' },
+        { name: 'message', el: form.elements['message'], message: 'Por favor escribe un mensaje.' },
+        { name: 'acceptPolicy', el: form.elements['acceptPolicy'], message: 'Necesitas aceptar las políticas.' }
+      ];
+
+      function validateField(field) {
+        const { el, message } = field;
+        if (!el) return { ok: true };
+        if (el.type === 'checkbox') {
+          if (!el.checked) return { ok: false, message };
+          return { ok: true };
+        }
+        if (!el.value.trim()) {
+          return { ok: false, message };
+        }
+        if (el.type === 'email') {
+          const re = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+          if (!re.test(el.value.trim())) {
+            return { ok: false, message };
+          }
+        }
+        return { ok: true };
+      }
+
+      function showError(el, msg) {
+        let feedback = el.parentElement.querySelector('.invalid-feedback');
+        if (!feedback) {
+          feedback = document.createElement('div');
+          feedback.className = 'invalid-feedback';
+          el.parentElement.appendChild(feedback);
+        }
+        feedback.textContent = msg;
+        el.classList.add('is-invalid');
+      }
+
+      function clearError(el) {
+        el.classList.remove('is-invalid');
+        const feedback = el.parentElement.querySelector('.invalid-feedback');
+        if (feedback) {
+          feedback.textContent = '';
+        }
+      }
+
+      form.addEventListener('submit', async function (event) {
+        event.preventDefault();
+
+        let anyError = false;
+
+        fields.forEach(f => {
+          if (f.el) clearError(f.el);
+        });
+
+        fields.forEach(f => {
+          const res = validateField(f);
+          if (!res.ok) {
+            showError(f.el, res.message);
+            anyError = true;
+          }
+        });
+
+        if (anyError) {
+          // Mostrar mensaje general con SweetAlert
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Por favor completa los campos correctamente.'
+          });
+          return;
+        }
+
+        const formData = new FormData(form);
+
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+              'Accept': 'application/json'
+            }
+          });
+          const json = await resp.json();
+          if (resp.ok) {
+            Swal.fire({
+              icon: 'success',
+              title: 'Correcto',
+              text: 'Tu mensaje ha sido enviado.'
+            });
+            form.reset();
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Error al enviar',
+              text: (json.error || 'No se pudo enviar el formulario.')
+            });
+          }
+        } catch (err) {
+          console.error('Fetch error:', err);
+          Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            text: 'Ocurrió un error inesperado. Intenta más tarde.'
+          });
+        }
+      });
+    })();
+  </script>
 </section>

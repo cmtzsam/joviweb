@@ -35,6 +35,9 @@ importers:
       sharp:
         specifier: ^0.34.4
         version: 0.34.4
+      sweetalert2:
+        specifier: ^11.23.0
+        version: 11.23.0
       swiper:
         specifier: ^12.0.2
         version: 12.0.2
@@ -1784,6 +1787,9 @@ packages:
   strip-ansi@7.1.2:
     resolution: {integrity: sha512-gmBGslpoQJtgnMAvOVqGZpEz9dyoKTCzy2nfz/n8aIFhN/jCE/rCmcxabB6jOOHV+0WNnylOxaxBQPSvcWklhA==}
     engines: {node: '>=12'}
+
+  sweetalert2@11.23.0:
+    resolution: {integrity: sha512-cKzzbC3C1sIs7o9XAMw4E8F9kBtGXsBDUsd2JZ8JM/dqa+nzWwSGM+9LLYILZWzWHzX9W+HJNHyBlbHPVS/krw==}
 
   swiper@12.0.2:
     resolution: {integrity: sha512-y8F6fDGXmTVVgwqJj6I00l4FdGuhpFJn0U/9Ucn1MwWOw3NdLV8aH88pZOjyhBgU/6PyBlUx+JuAQ5KMWz906Q==}
@@ -4100,6 +4106,8 @@ snapshots:
   strip-ansi@7.1.2:
     dependencies:
       ansi-regex: 6.2.2
+
+  sweetalert2@11.23.0: {}
 
   swiper@12.0.2: {}
 
