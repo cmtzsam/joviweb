@@ -3,7 +3,7 @@
 const { title } = Astro.props;
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-
+import ContactBlock from '../components/ContactBlock.astro';
 import '@fontsource-variable/roboto';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -22,9 +22,33 @@ import '../styles/style.scss';
 	</head>
 	<body  >	
 		<Header />
-		<main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-smooth-scroll="true" tabindex="0">
-			<slot />
-		</main>
+		<slot />
+		<!-- <main data-bs-spy="scroll" data-bs-target="#navbar-example2" data-bs-smooth-scroll="true" tabindex="0">
+		</main> -->
+		<ContactBlock />
+		<section class="mapBlock">
+			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d230074.67247781364!2d-100.6068054132812!3d25.707179999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x86629508ecc46295%3A0xc9b5678ad21905fb!2sJOVI%20Equipos%20y%20Sistemas%20Contra%20Incendio%20Venta%20y%20Recarga!5e0!3m2!1ses-419!2smx!4v1759196446539!5m2!1ses-419!2smx" width="600" height="345" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+		</section>
+		<section class="endlinered">
+			<div class="container">
+				<div class="endlinered--copy">
+					<div class="row justify-content-between align-items-center">
+						<div class="col-12 col-lg-7">
+							<p>
+								Contáctanos hoy mismo para conocer todos los servicios, <br>
+								en breve uno de nuestros asesores te brindará mas información.
+							</p>
+						</div>
+						<div class="col-12 col-lg-4 text-center">
+							<a class="btn btn-danger bg-white btn-lg fw-bold text-transform text-danger">
+								<i class="bi bi-plus-lg"></i>
+								Ponerme en contacto
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>		
 		<Footer />
 		<script>
 			import 'bootstrap/dist/js/bootstrap.bundle.min.js';

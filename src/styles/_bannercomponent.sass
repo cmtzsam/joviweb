@@ -1,0 +1,124 @@
+@use 'variables' as *
+
+.bannerComponent
+  background-color: var(--primary-color)
+  padding-top: 50px  
+  .container
+    height: 420px
+    @include flexCenter
+    @include maxMobileLandscape
+      height: 320px
+  h1
+    text-align: center
+    width: 100%
+    max-width: 700px
+    margin: 0 auto
+    text-shadow: 0px 0px 23px rgba(0, 0, 0, 0.4)
+    color: var(--blanco)
+    text-transform: uppercase
+    font-size: 40px
+    @include minDesktop1280
+      font-size: 55px
+    @include maxMobileLandscape
+      font-size: 30px
+
+
+
+
+// pasar a hojas propias 
+.aboutUsBlock
+  padding: 30px 0 
+
+  &--grid
+    width: 100%
+    max-width: 950px
+    margin: 0 auto
+
+  &--img
+    img
+      max-width: 200px
+      @include minTablet
+        max-width: 100%
+
+  &--data
+    width: 100%
+    padding: 15px 0
+    @include minDesktopSmall
+      max-width: 400px
+    h2, h3, h4, p
+      margin: 10px 0
+      text-align: center
+      @include minTablet
+        text-align: left
+        margin: 5px 0
+    h2, h4
+      color: var(--primary-color) 
+    h2
+      font-size: 24px
+      font-weight: bold
+    h3, h4
+      font-size: 18px
+
+
+
+
+.tabsBlock
+
+  h2
+    color: var(--primary-color)
+    font-size: 35px
+    padding-top: 20px
+    @include minDesktopSmall
+      font-size: 48px
+      padding: 0
+
+  &--tabsPart
+    display: block
+    width: 100%
+    margin: 50px auto
+    @include maxTablet
+      border-left: 1px solid #ccc
+      border-bottom: 1px solid #ccc
+      border-right: 1px solid #ccc
+
+  &--btn
+    padding: 15px
+    border-top: 1px solid #ccc!important
+    @include maxTablet
+      border-radius: 0!important
+      display: block!important
+    img
+      display: block
+      max-width: 100%
+      @include maxTablet
+        max-width: 80px
+        height: auto
+      @include maxMobile
+        max-width: 60px
+    span
+      display: block
+      width: 100%
+      text-align: left
+    &-title,
+    &-seemore
+      color: var(--primary-color)
+      text-transform: uppercase
+      font-weight: bold      
+    &-title
+      @include maxTablet
+        display: flex!important
+        align-items: center
+        gap: 0 10px
+    &-desc
+      @include maxTablet
+        font-size: 14px
+        padding: 10px 0
+      @include maxMobile
+        font-size: 13px
+    &-seemore
+      font-size: 15px
+      @include maxTablet
+        font-size: 14px
+        text-align: center!important
+      @include maxMobile
+        font-size: 13px

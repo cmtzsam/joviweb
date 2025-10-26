@@ -1,0 +1,118 @@
+---
+import Layout from "../layouts/Layout.astro";
+import BannerComponent from "../components/BannerComponent.astro";
+
+import imageAbout from '../assets/img-banner-about.png'
+import imageTab from '../assets/icono-tab.png'
+
+
+
+---
+<Layout>
+  <BannerComponent />
+  
+  <section class="aboutUsBlock">
+    <div class="container">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-6 ">
+            <div class="aboutUsBlock--img ">
+              <img 
+                src={imageAbout.src} 
+                alt="Nosotros"
+                width={imageAbout.width}
+                height={imageAbout.height}
+                class="img-fluid d-block mx-auto"
+              >
+            </div>
+          </div>
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <h2>Sobre Nosotros</h2>
+              <h3>Especialistas en Soluciones Contra Incendios</h3>
+              <h4>Desde 1996</h4>
+              <p>En <strong>Extintores JOVI</strong>, con sede en Monterrey, Nuevo León, nos especializamos desde 1996 en ofrecer soluciones y servicios integrales en protección contra incendios.</p>
+              <p>Nuestra misión es salvaguardar la seguridad de nuestros clientes a través de productos confiables y atención profesional, brindando respuestas efectivas a sus necesidades en prevención y control de incendios.</p>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="tabsBlock">
+
+    <div class="container">
+
+      <h2 class="text-center text-uppercase">Categorías</h2>
+
+
+      <div class="tabsBlock--grid">
+
+        <div class="tabsBlock--tabsPart">
+          {[
+            {
+              id: "collapse1",
+              title:"Categoría 1",
+              shortdesc: "Recipiente del extintor presurizado permanentemente, conteniendo como agente extintor agua y espuma.",
+              content: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.",
+              image: imageTab
+            },
+            {
+              id: "collapse2", 
+              title: "Categoría 2",
+              shortdesc: "Recipiente del extintor presurizado permanentemente, contenido como agente extinguidor de polvo químico seco, agente limpios, químico húmedo.",
+              content: "Additional content for another category item.",
+              image: imageTab
+            },
+            {
+              id: "collapse3",
+              title: "Categoría 3",
+              shortdesc: "Extintor que contiene bióxido de carbono como agente extinguidor.",
+              content: "More placeholder content for the third collapse item.",
+              image: imageTab
+            }
+          ].map((item) => (
+            <!-- Item -->
+            <button 
+              class="tabsBlock--btn d-flex w-100 border-0 radius-0 align-items-center rounded-pill" 
+              type="button" 
+              data-bs-toggle="collapse" 
+              data-bs-target={`#${item.id}`} 
+              aria-expanded="false" 
+              aria-controls={item.id}
+            >
+              <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-none d-md-block d-lg-block" />
+              <span class="tabsBlock--btn-data">
+                <span class="tabsBlock--btn-title">
+                  <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-block d-md-none d-lg-none" />
+                  {item.title}
+                </span>
+                <span class="tabsBlock--btn-desc">
+                  {item.shortdesc}
+                </span>
+                <span class="tabsBlock--btn-seemore">
+                  Más información 
+                  <i class="bi bi-chevron-double-down"></i>
+                </span>
+              </span>
+            </button>
+            <div class="collapse" id={item.id}>
+              <div class="tabsBlock--card">
+                {item.content}
+              </div>
+            </div>
+            <!-- Item -->
+          ))}
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+</Layout>

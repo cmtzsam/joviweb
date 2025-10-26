@@ -1,6 +1,7 @@
 :root
   --primary-color: #b41213
   --black-color: #252a30
+  --blanco: #fff
 
 .color-primary
   color: var(--primary-color)
@@ -123,6 +124,10 @@ $mobile-portrait: 420px
 // max 768
 @mixin maxTablet
   @media ( max-width: $tablet )
+    @content
+// min 768
+@mixin minTablet
+  @media ( min-width: $tablet )
     @content
 // max 568
 @mixin maxMobile
