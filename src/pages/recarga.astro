@@ -1,12 +1,67 @@
 ---
+import ExtintoresBlock from "../components/ExtintoresBlock"
 import Layout from "../layouts/Layout.astro";
 import BannerComponent from "../components/BannerComponent.astro";
 
 import imageAbout from '../assets/img-banner-about.png'
 import imageTab from '../assets/icono-tab.png'
 
-
-
+const content_1 = `<h5>PROCEDIMIENTO:</h5>
+<p>Se analiza, dentro de la orden de servicio, la actividad a realizar: si el equipo ingresará para servicio de mantenimiento o recarga.</p>
+<p>En caso de mantenimiento, se descarga el agente extintor mediante un sistema de recuperación que permita retirarlo sin pérdida, utilizando el método de trasvase. Para la recarga, el agente se dispara sin recuperación.</p>
+<ul>
+  <li><span>Desensamble del extintor utilizando prensa de sujeción.</span></li>
+  <li><span>Revisión minuciosa del interior y exterior del cilindro, con el apoyo de una lámpara.</span></li>
+  <li><span>Prueba hidrostática de alta presión (cuando aplique). Esta prueba debe realizarse cada 5 años y se efectúa por un proveedor externo.</span></li>
+  <li><span>Revisión de la válvula, manguera, corneta y check, con lubricación previa de las partes que lo requieran.</span></li>
+  <li><span>No se deben realizar adaptaciones a las refacciones.</span></li>
+  <li><span>Armado de la válvula.</span></li>
+  <li><span>Armado del extintor utilizando la prensa de sujeción.</span></li>
+  <li><span>Se tara el cilindro vacío para considerar este peso junto con el del agente extintor.</span></li>
+  <li><span>Llenado por medio de trasvase, mediante sistema de recuperación que permita conservar el agente.</span></li>
+</ul>
+<p><strong>Importante:</strong> En el mantenimiento se reutiliza el mismo agente. En la recarga, el agente será nuevo y, en su caso, certificado.</p>
+<ul>
+  <li><span>Colocación del seguro y sello de seguridad.</span></li>
+  <li><span>Una vez que el equipo se encuentra a temperatura ambiente, se realiza la prueba de hermeticidad en agua con una altura mínima de 40 cm.</span></li>
+  <li><span>Remoción de etiquetas vencidas.</span></li>
+  <li><span>Etiquetado al frente del extintor, sin obstrucciones.</span></li>
+  <li><span>Colocación en el área de entrega.</span></li>
+</ul>
+<p>Es importante señalar que todas las piezas cambiadas serán registradas en la orden de trabajo para informar posteriormente al cliente, así como si se requiere realizar una prueba hidrostática (P.H.) de baja o alta presión.</p>
+<h5>Transporte de Equipos</h5>
+<p>El traslado de los equipos se realiza mediante vehículos que aseguran, con un método de sujeción adecuado, que los extintores no sufran daños o accidentes durante el traslado hacia y desde nuestras instalaciones.</p>
+<h5>Pintura de Equipos</h5>
+<p>Los extintores que requieren pintura serán tratados durante el proceso de mantenimiento con el fin de mejorar su estética y presentación.</p>
+<h5>Prueba Hidrostática de Baja Presión</h5>
+<p>El procedimiento para esta prueba es el siguiente:</p>
+<ol>
+  <li><span>Se llena el cilindro en su totalidad con agua.</span></li>
+  <li><span>Se ingresa a la reja de protección.</span></li>
+  <li><span>Se conecta el equipo.</span></li>
+  <li><span>Se aplica presión, la cual debe ser el doble de la presión de trabajo del extintor.</span></li>
+  <li>
+    <span>Se mantiene la presión durante un minuto, vigilando lo siguiente:  </span>
+    <ul>
+      <li><span>Que el cilindro no se abra.</span></li>
+      <li><span>Que no se deforme.</span></li>
+      <li><span>Que no disminuya la presión en el indicador de la bomba.</span></li>      
+    </ul>
+  </li>
+</ol>
+<p>En caso de presentarse alguno de los síntomas anteriores, el equipo se da de baja. Si no se presenta ninguno, se desconecta el equipo, se vacía completamente el agua y se procede a marcar o colocar una placa permanente en el cilindro con la fecha de la prueba y las iniciales de esta empresa.
+Finalmente, si es necesario, el equipo se pone a secar.</p>
+<p><strong>Equipos a los que NO se brinda servicio</strong></p>
+<p>En esta empresa no se brinda servicio a los siguientes tipos de extintores:</p>
+<ul>
+  <li><span>De soda-ácido</span></li>
+  <li><span>De espuma química</span></li>
+  <li><span>De líquido vaporizante</span></li>
+  <li><span>De agua o agua con anticongelante operado por cartucho interior, cuando este no sea de acero inoxidable o no cuente con recubrimiento especial anticorrosivo</span></li>
+  <li><span>Que cuenten con cilindro de cobre o bronce con remaches o soldadura blanda (excepto los de bomba manual)</span></li>
+  <li><span>Extintores no recargables (tipo aerosol o con válvula de plástico)</span></li>  
+</ul>
+<p><strong>Esto debido a que dichos equipos son obsoletos conforme a la NOM-154-SCFI-2005.</strong></p>`;
 ---
 <Layout>
   <BannerComponent />
@@ -43,21 +98,16 @@ import imageTab from '../assets/icono-tab.png'
 
 
   <section class="tabsBlock">
-
     <div class="container">
-
       <h2 class="text-center text-uppercase">Categorías</h2>
-
-
       <div class="tabsBlock--grid">
-
         <div class="tabsBlock--tabsPart">
           {[
             {
               id: "collapse1",
               title:"Categoría 1",
               shortdesc: "Recipiente del extintor presurizado permanentemente, conteniendo como agente extintor agua y espuma.",
-              content: "Some placeholder content for the collapse component. This panel is hidden by default but revealed when the user activates the relevant trigger.",
+              content: content_1,
               image: imageTab
             },
             {
@@ -76,32 +126,36 @@ import imageTab from '../assets/icono-tab.png'
             }
           ].map((item) => (
             <!-- Item -->
-            <button 
-              class="tabsBlock--btn d-flex w-100 border-0 radius-0 align-items-center rounded-pill" 
-              type="button" 
-              data-bs-toggle="collapse" 
-              data-bs-target={`#${item.id}`} 
-              aria-expanded="false" 
-              aria-controls={item.id}
-            >
-              <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-none d-md-block d-lg-block" />
-              <span class="tabsBlock--btn-data">
-                <span class="tabsBlock--btn-title">
-                  <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-block d-md-none d-lg-none" />
-                  {item.title}
+            <div class="tabsBlock--item">
+              <button 
+                class="tabsBlock--btn d-flex w-100 border-0 radius-0 align-items-center rounded-pill" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target={`#${item.id}`} 
+                aria-expanded="false" 
+                aria-controls={item.id}
+              >
+                <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-none d-md-block d-lg-block" />
+                <span class="tabsBlock--btn-data">
+                  <span class="tabsBlock--btn-title">
+                    <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-block d-md-none d-lg-none" />
+                    {item.title}
+                  </span>
+                  <span class="tabsBlock--btn-desc">
+                    {item.shortdesc}
+                  </span>
+                  <span class="tabsBlock--btn-seemore">
+                    Más información 
+                    <i class="bi bi-chevron-double-down"></i>
+                  </span>
                 </span>
-                <span class="tabsBlock--btn-desc">
-                  {item.shortdesc}
-                </span>
-                <span class="tabsBlock--btn-seemore">
-                  Más información 
-                  <i class="bi bi-chevron-double-down"></i>
-                </span>
-              </span>
-            </button>
-            <div class="collapse" id={item.id}>
-              <div class="tabsBlock--card">
-                {item.content}
+              </button>
+              <div class="tabsBlock--collapse">
+                <div class="collapse" id={item.id}>
+                  <div class="tabsBlock--card">
+                    <Fragment set:html={item.content} />
+                  </div>
+                </div>
               </div>
             </div>
             <!-- Item -->
@@ -114,5 +168,17 @@ import imageTab from '../assets/icono-tab.png'
 
   </section>
 
+
+  <div class="titleGlobal">
+    <div class="container text-center">
+      <div class="titleGlobal--data">
+        <h5>Los Mejores Equipos de Extintores</h5>
+        <h2>Venta y Recarga de Extintores y Equipo Contra Incendio</h2>
+      </div>
+    </div>
+  </div>
+
+  
+  <ExtintoresBlock client:load>
 
 </Layout>

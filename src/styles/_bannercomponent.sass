@@ -1,5 +1,24 @@
 @use 'variables' as *
 
+
+.titleGlobal
+
+  padding: 60px 0
+  @include maxTablet
+    padding: 30px 0
+
+  &--data
+    width: 100%
+    max-width: 545px
+    margin: 0 auto
+    h3, h4, h5, h2
+      text-transform: uppercase 
+    h2
+      color: var(--primary-color)
+      margin-top: 10px
+
+
+
 .bannerComponent
   background-color: var(--primary-color)
   padding-top: 50px  
@@ -64,6 +83,9 @@
 
 .tabsBlock
 
+  @include minTablet
+    padding: 50px 0 25px
+
   h2
     color: var(--primary-color)
     font-size: 35px
@@ -72,29 +94,49 @@
       font-size: 48px
       padding: 0
 
+
   &--tabsPart
     display: block
     width: 100%
+    max-width: 920px
     margin: 50px auto
     @include maxTablet
       border-left: 1px solid #ccc
       border-bottom: 1px solid #ccc
       border-right: 1px solid #ccc
 
+  &--item
+    &:last-child
+      @include minTablet
+        padding-bottom: 0px
+    @include minTablet
+      padding-bottom: 15px
   &--btn
     padding: 15px
     border-top: 1px solid #ccc!important
+    border-radius: 0
+    position: relative
+    z-index: 2
+    &.collapsed
+      border-radius: 50rem
+    @include minTablet
+      border: 0!important
     @include maxTablet
       border-radius: 0!important
       display: block!important
     img
       display: block
       max-width: 100%
+      @include minTablet
+        margin-right: 15px
       @include maxTablet
         max-width: 80px
         height: auto
       @include maxMobile
         max-width: 60px
+    &-data
+      @include minTablet
+        padding-right: 15px
     span
       display: block
       width: 100%
@@ -110,6 +152,8 @@
         align-items: center
         gap: 0 10px
     &-desc
+      @include minTablet
+        padding: 5px 0
       @include maxTablet
         font-size: 14px
         padding: 10px 0
@@ -122,3 +166,32 @@
         text-align: center!important
       @include maxMobile
         font-size: 13px
+  &--collapse
+    margin-top: 10px
+  &--card
+    border-radius: 50px
+    padding: 30px
+    background-color: var(--gris)
+    box-shadow: inset 0px 3px 3px rgba(0,0,0,0.15), inset 0px -3px 3px rgba(0,0,0,0.15)
+    @include maxTablet
+      padding: 15px 20px
+    @include maxMobile
+      padding: 10px 15px
+    h5,
+    ul,
+    ol,
+    li,
+    span,
+    p
+      @include maxTablet
+        font-size: 15px
+      @include maxMobile
+        font-size: 14px
+    h5, p
+      margin: 10px 0
+    ul, ol
+      padding: 0 0 0 20px
+      li
+        margin-bottom: 5px
+        &:last-child
+          margin-bottom: 0
