@@ -31,12 +31,6 @@ const EXTINTORES_ARR = [
     description: "Apto para fuegos clase B Y C. Válvula de material latón con mango de acero inoxidable...",
     link: "#!"
   },
-  {
-    image: extintorPolvo,
-    title: "EXTINTOR DE POLVO QUÍMICO SECO (ABC)",
-    description: "Versátil y de amplio uso, combate fuegos clase A, B y C con alta eficacia y acción inmediata.",
-    link: "#!"
-  },
 ];
 
 export default function ClientsBlock() {
@@ -96,7 +90,7 @@ export default function ClientsBlock() {
                     <p className="my-2">{extintor.description}</p>
                     <a href={extintor.link} class="btn btn-danger btn-sm shadow-sm text-uppercase rounded-pill px-3 fs-6">
                       Más información
-                      <i class="bi bi-chevron-double-down ms-2"></i>
+                      <i class="bi bi-chevron-double-right ms-2"></i>
                     </a>                  
                   </div>
                 </div>

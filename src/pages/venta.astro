@@ -1,0 +1,56 @@
+---
+import ExtintoresBlockGrid from "../components/ExtintoresBlockGrid.astro"
+import Layout from "../layouts/Layout.astro";
+
+
+import imageAbout from '../assets/img-banner-about.png'
+import imageTab from '../assets/icono-tab.png'
+
+import '../styles/_bannercomponent.sass';
+
+---
+<Layout>
+
+  <section class="bannerComponent" >
+    <div class="container ">
+      <div class="bannerComponent--data">
+        <h1 class="text-center my-0">
+          Venta de extintores en monterrey      
+        </h1>
+        <p class="text-center text-white pt-3">
+          Protege tu empresa y tu hogar con nuestra venta, mantenimiento y recarga de extintores. Seguridad que sí responde cuando más la necesitas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="aboutUsBlock">
+    <div class="container">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12">
+            <div class="aboutUsBlock--data mw-100 my-0 py-0">
+              <h2 class="text-center fs-4">En Extintores JOVI,</h2>
+              <h3 class="text-center fs-5">Brindamos soluciones integrales en protección contra incendios.</h3>
+              <p class="text-center fs-6">Nos especializamos en la venta, recarga y mantenimiento de extintores certificados, cumpliendo con las normativas vigentes de seguridad industrial y protección civil. Nuestro objetivo es garantizar que cada cliente cuente con equipos funcionales y adecuados a su tipo de riesgo, ya sea en el hogar, comercio, industria o cualquier tipo de establecimiento.</p>
+              <p class="text-center fs-6">Confía en nuestro servicio profesional y asegura la operatividad y eficacia de tu sistema contra incendios.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="bannerRed bg-red py-3 mb-4">
+    <div class="container text-center">
+      <p class="text-white text-uppercase">Protege lo que más importa con</p>
+      <h2 class="text-white text-uppercase">Extintores certificados</h2>
+      <p class="text-white text-uppercase">Adquiere equipos confiables y de alta calidad para tu empresa, negocio u hogar.</p>
+      <h3 class="text-white text-uppercase">¡Solicita tu cotización hoy!</h3>
+    </div>
+  </div>
+  
+  
+  <ExtintoresBlockGrid >
+
+</Layout>

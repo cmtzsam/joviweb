@@ -1,0 +1,101 @@
+---
+import '../styles/_gallerysection.sass';
+
+import extintorPolvo from '../assets/extintor-polvo.png';
+import extintorF50 from '../assets/extintor-f50.png';
+import extintor5b from '../assets/extintor-5b.png';
+
+import extintor1 from '../assets/extintor-1.png';
+import extintor2 from '../assets/extintor-2.png';
+import extintor3 from '../assets/extintor-3.png';
+import extintor4 from '../assets/extintor-4.png';
+import extintor5 from '../assets/extintor-5.png';
+import extintor6 from '../assets/extintor-6.png';
+import extintor7 from '../assets/extintor-7.png';
+
+const EXTINTORES_ARR = [
+  // {
+  //   image: extintorPolvo,
+  //   title: "EXTINTOR DE POLVO QUÍMICO SECO (ABC)",
+  //   description: "Versátil y de amplio uso, combate fuegos clase A, B y C con alta eficacia y acción inmediata.",
+  //   link: "#!"
+  // },
+  // {
+  //   image: extintorF50,
+  //   title: "EXTINTOR DE AGENTE ENCAPSULADOR F-500",
+  //   description: "Apto para fuegos clase A, B y D Válvula fabricada en latón acabado el cromo. Manijas de acero inoxidable Cilindro de acero inoxidable 304L con prueba de fuga de helio al 100%...",
+  //   link: "#!"
+  // },
+  // {
+  //   image: extintor5b,
+  //   title: "EXTINTOR DE FUEGO DE 5 LB CO2 MODEL: CO5LB",
+  //   description: "Apto para fuegos clase B Y C. Válvula de material latón con mango de acero inoxidable...",
+  //   link: "#!"
+  // },
+  {
+    image: extintor1,
+    title: "EXTINTOR DE POLVO QUÍMICO SECO (ABC)",
+    description: "Versátil y de amplio uso, combate fuegos clase A, B y C con alta eficacia y acción inmediata..",
+    link: "#!"
+  },
+  {
+    image: extintor2,
+    title: "EXTINTOR DE AGUA NEBULIZADA DE 2,5 GAL",
+    description: "Contiene agua desionizada que proporciona protección en salas blancas, instalaciones de telecomunicaciones y centros hospitalarios..",
+    link: "#!"
+  },
+  {
+    image: extintor3,
+    title: "EXTINTOR DE FUEGO DE 5 LB CO2",
+    description: "Apto para fuegos clase B y C. Válvula de material latón con mango de acero inoxidable..",
+    link: "#!"
+  },
+  {
+    image: extintor4,
+    title: "EXTINTOR DE AGENTE ENCAPSULADOR F-500",
+    description: "Apto para fuego clase A, B y D Válvula fabricada en latón acabado el cromo. Manija de acero inoxidable Cilindro de acero inoxidable 304L con prueba de fuga de helio al 100%..",
+    link: "#!"
+  },
+  {
+    image: extintor5,
+    title: "EXTINTOR DE INCENDIOS DE AGUA DE 2.5GAL",
+    description: "Apta para fuegos de clase A. Válvula de material de latón plateada. Mango de acero inoxidable. Cilindro de acero inoxidable con una fuga de helio del 100%..",
+    link: "#!"
+  },
+  {
+    image: extintor6,
+    title: "EXTINTOR K",
+    description: "Diseñado para fuegos en cocinas… combate aceites y grasas vegetales o animales, ideal para restaurantes y áreas de comida, agente de enfriamiento y supresión rápida..",
+    link: "#!"
+  },
+  {
+    image: extintor7,
+    title: "EXTINTOR D",
+    description: "Especializado en fuegos clase D, metales combustibles como magnesio, titanio o sodio, uso en industrias metalúrgicas, agente seco no reactivo, sofoca sin provocar reacciones peligrosas...",
+    link: "#!"
+  }  
+];
+---
+    <section class="productsGallery pb-5" id="scrollspyClientes">
+      <div class="container">
+        <div class="row">
+          {EXTINTORES_ARR.map((extintor, i) => (
+            <div class="col-12 col-md-6 col-lg-4">
+              <div class="productsGallery--item text-center mb-5 pb-5">
+                <div class="productsGallery--image text-center">
+                  <img src={extintor.image.src} alt={extintor.title} width={extintor.image.width} height={extintor.image.height} class="d-block mx-auto img-fluid" />
+                </div>
+                <div class="productsGallery--data text-center mw-100 w-100">
+                  <h2 class="text-uppercas fs-5">{extintor.title}</h2>
+                  <p class="my-2">{extintor.description}</p>
+                  <a href={extintor.link} class="btn btn-danger btn-sm shadow-sm text-uppercase rounded-pill px-3 fs-6">
+                    Más información
+                    <i class="bi bi-chevron-double-right ms-2"></i>
+                  </a>                  
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
