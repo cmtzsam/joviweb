@@ -1,0 +1,210 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+import imageAbout from '../assets/consultoria-img-1.png'
+import icoCirc1 from '../assets/ico-circ-1.png'
+import icoCirc2 from '../assets/ico-circ-2.png'
+import icoCirc3 from '../assets/ico-circ-3.png'
+import icoCirc4 from '../assets/ico-circ-4.png'
+import icoCirc5 from '../assets/ico-circ-5.png'
+import icoCirc6 from '../assets/ico-circ-6.png'
+import icoCirc7 from '../assets/ico-circ-7.png'
+import icoCirc8 from '../assets/ico-circ-8.png'
+import icoCirc9 from '../assets/ico-circ-9.png'
+import icoCirc10 from '../assets/ico-circ-10.png'
+import icoCirc11 from '../assets/ico-circ-11.png'
+import icoCirc12 from '../assets/ico-circ-12.png'
+
+import '../styles/_bannercomponent.sass';
+
+const items_consultorias = [
+  {
+    title: "Consultoría en Protección Civil",
+    desc: "Diseño e implementación de planes de contingencia, análisis de riesgos y programas de protección civil...",
+    image: icoCirc1
+  },
+  {
+    title: "Capacitación en Seguridad y Emergencias",
+    desc: "Cursos especializados en prevención de incendios, uso de extintores, primeros auxilios, rescate y evacuación...",
+    image: icoCirc2
+  },
+  {
+    title: "Formación de Brigadas",
+    desc: "Entrenamiento para brigadas contra incendio, primeros auxilios, evacuación y materiales peligrosos...",
+    image: icoCirc3
+  },
+  {
+    title: "Planes de Seguridad e Higiene",
+    desc: "Programas para prevenir riesgos, garantizar seguridad laboral y cumplir con normativas oficiales...",
+    image: icoCirc4
+  },
+  {
+    title: "Sistemas y Equipos Contra Incendio",
+    desc: "Asesoría en selección, instalación y mantenimiento de hidrantes, extintores, señalización y sistemas fijos...",
+    image: icoCirc5
+  }
+];
+const items_capacitacion = [
+  {
+    title: "Prevención y Combate de Incendios",
+    desc: "Capacitación práctica en técnicas de control y extinción de incendios, uso de mangueras y equipo especializado...",
+    image: icoCirc6
+  },
+  {
+    title: "Manejo y Uso de Extintores",
+    desc: "Entrenamiento en el reconocimiento de tipos de fuego, selección de extintor adecuado y procedimientos seguros de uso...",
+    image: icoCirc7
+  },
+  {
+    title: "Primeros Auxilios",
+    desc: "Formación en atención inmediata ante emergencias médicas, estabilización de víctimas y protocolos de seguridad...",
+    image: icoCirc8
+  },
+  {
+    title: "Búsqueda y Rescate",
+    desc: "Técnicas para la localización, rescate y evacuación de personas en situaciones de riesgo o espacios confinados...",
+    image: icoCirc9
+  },
+  {
+    title: "Evacuación y Simulacros",
+    desc: "Diseño y ejecución de simulacros, capacitación en rutas de evacuación y protocolos de emergencia...",
+    image: icoCirc10
+  },
+  {
+    title: "Manejo de Materiales Peligrosos (HAZMAT)",
+    desc: "Capacitación en la identificación, manipulación y control de sustancias químicas y materiales de riesgo...",
+    image: icoCirc11
+  },
+  {
+    title: "Formación de Brigadas Internas",
+    desc: "Entrenamiento integral en organización, roles y respuesta coordinada ante emergencias en empresas e instituciones...",
+    image: icoCirc12
+  }
+];
+
+---
+<Layout title="JOVI">
+  <section class="bannerComponent consultoriaHero" >
+    <div class="container ">
+      <div class="bannerComponent--data mw-100">
+        <h1 class="text-center my-0 mw-100 w-100">
+          Consultoría y Capacitación    
+        </h1>
+        <p class="text-center text-white pt-3">
+          Formación de brigadas, planes de contingencia y seguridad integral
+        </p>
+      </div>
+    </div>
+  </section>
+  <section class="aboutUsBlock">
+    <div class="container">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <p>
+                Ofrecemos programas especializados en Protección Civil, desde el diseño e implementación de planes de contingencia y análisis de riesgos, hasta la elaboración de programas de seguridad e higiene adaptados a cada entorno.
+              </p>
+              <h3 class="py-3">Brindamos capacitación práctica y teórica en:</h3>           
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Prevención y combate de incendios.</p>
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Manejo y uso de extintores.</p>
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Operaciones contra incendios.</p>
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Primeros auxilios.</p>
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Búsqueda y rescate.</p>
+              <p class="d-flex aling-items-center gap-2"><i class="bi bi-check-circle-fill"></i> Planes y simulacros de evacuación.</p>
+              <p class="pt-3">
+                Nuestro objetivo es garantizar que tu equipo cuente con los conocimientos y habilidades necesarias para actuar de forma segura y eficiente ante cualquier situación de emergencia.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5 col-lg-6 ">
+            <div class="aboutUsBlock--img ">
+              <img 
+                src={imageAbout.src} 
+                alt="Nosotros"
+                width={imageAbout.width}
+                height={imageAbout.height}
+                class="img-fluid d-block mx-auto"
+              >
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="titleGlobal alternative pb-5 mb-5">
+    <div class="container text-center">
+      <div class="titleGlobal--data">
+        <h2>Consultorías</h2>
+        <h5 >En seguridad y protección civil, asesoría experta para diseñar planes, reducir riesgos y cumplir con normativas. Conoce nuestras áreas de servicio y elige la que mejor se adapta a tus necesidades.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="servicesGrid">
+    <div class="container">
+      <div class="row">
+        { items_consultorias.map( item => (
+          <div class="col-12 col-md-6 col-lg-4 ">
+            <div class="productsGallery--item text-center">
+              <div class="productsGallery--image text-center">
+                <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-block mx-auto img-fluid" /> 
+              </div>
+              <div class="productsGallery--data text-center">
+                <h2 class="text-uppercase fs-5">
+                  {item.title}
+                </h2>
+                <p >
+                  {item.desc}
+                </p>
+                <a href="#!" class="btn btn-danger btn-sm shadow-sm text-uppercase rounded-pill px-3 fs-6">
+                  Más información
+                  <i class="bi bi-chevron-double-right ms-2"></i>
+                </a>                  
+              </div>
+            </div> 
+          </div>        
+        ))}   
+      </div>     
+    </div>
+  </div>
+  <div class="titleGlobal alternative pb-5 mb-5 mt-3">
+    <div class="container text-center">
+      <div class="titleGlobal--data">
+        <h2>CAPACITACIÓN</h2>
+        <h5>En seguridad y emergencias, programas prácticos para entrenar a tu equipo en prevención, respuesta y control de riesgos. Descubre nuestras áreas de formación especializadas.</h5>
+      </div>
+    </div>
+  </div>
+  <div class="servicesGrid pb-5">
+    <div class="container">
+      <div class="row">
+        { items_capacitacion.map( item => (
+          <div class="col-12 col-md-6 col-lg-4 ">
+            <div class="productsGallery--item text-center">
+              <div class="productsGallery--image text-center">
+                <img src={item.image.src} alt={item.title} width={item.image.width} height={item.image.height} class="d-block mx-auto img-fluid" /> 
+              </div>
+              <div class="productsGallery--data text-center">
+                <h2 class="text-uppercase fs-5">
+                  {item.title}
+                </h2>
+                <p class="my-2">
+                  {item.desc}
+                </p>
+                <a href="#!" class="btn btn-danger btn-sm shadow-sm text-uppercase rounded-pill px-3 fs-6">
+                  Más información
+                  <i class="bi bi-chevron-double-right ms-2"></i>
+                </a>                  
+              </div>
+            </div> 
+          </div>        
+        ))}   
+      </div>     
+    </div>
+  </div>  
+
+
+</Layout>

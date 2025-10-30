@@ -6,6 +6,22 @@
   @include maxTablet
     padding: 30px 0
 
+  &.alternative
+    .titleGlobal--data
+      max-width: 800px
+      h2
+        font-size: 50px
+        @include maxTablet        
+          font-size: 30px
+      h5
+        text-transform: none
+        font-weight: 300
+        font-size: 22px
+        line-height: 1.5
+        margin-top: 10px
+        @include maxTablet
+          font-size: 16px
+
   &--data
     width: 100%
     max-width: 545px
@@ -25,6 +41,8 @@
   background-size: cover
   background-repeat: no-repeat
   padding-top: 50px  
+  &.consultoriaHero
+    background-image: url('/images/bg-cc.jpg')
   .container
     height: 420px
     @include flexCenter
@@ -85,6 +103,9 @@
       font-weight: bold
     h3, h4
       font-size: 18px
+    p
+      i
+        color: var(--primary-color)
 
 
 
@@ -206,3 +227,25 @@
         margin-bottom: 5px
         &:last-child
           margin-bottom: 0
+
+
+
+
+
+
+.servicesGrid
+  .productsGallery--item
+    margin-bottom: 50px
+  .productsGallery--image
+    width: 220px
+    height: 220px
+    border-radius: 50%
+    background-color: var(--primary-color)
+    @include flexCenter
+    margin: 0 auto
+  .productsGallery--data
+    width: 100%
+    max-width: 300px
+    margin: 30px auto 0
+    p
+      padding: 20px 0
