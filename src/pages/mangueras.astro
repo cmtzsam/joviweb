@@ -1,0 +1,245 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import mangueras1 from "../assets/mangueras-1.jpg";
+import mangueras2 from "../assets/mangueras-2.jpg";
+import mangueras3 from "../assets/mangueras-3.png";
+import mangueras4 from "../assets/mangueras-4.jpg";
+
+import "../styles/_bannercomponent.sass";
+
+
+---
+
+<style>
+  .aboutUsBlock--data{
+    max-width: 100%;
+  }
+  @media (max-width: 767px){
+    .btn-danger{
+      margin-left: auto;
+      margin-right: auto;
+      display: table;
+    }
+    .aboutUsBlock--data p{
+      text-align: left;
+    }    
+  }
+</style>
+
+<Layout title="JOVI">
+  <section class="bannerComponent consultoriaHero">
+    <div class="container">
+      <div class="bannerComponent--data mw-100">
+        <h1 class="text-center my-0 mw-100 w-100">MANGUERAS E HIDRANTES</h1>
+        <p
+          class="mx-auto text-center text-white pt-3"
+          style="max-width: 540px;"
+        >
+          Protección activa con mangueras resistentes a altas presiones e
+          hidrantes de acero galvanizado para máxima durabilidad y seguridad.
+        </p>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="aboutUsBlock">
+    <div class="container">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <p>
+                Ofrecemos soluciones completas en sistemas contra incendio
+                mediante la instalación, mantenimiento y suministro de mangueras
+                e hidrantes. Nuestros servicios garantizan equipos listos para
+                su uso en emergencias, cumpliendo con las normas de seguridad
+                vigentes.
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> Instalación y suministro
+                de hidrantes y mangueras certificadas.
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> Mantenimiento preventivo
+                y correctivo para asegurar óptimo funcionamiento.
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> Pruebas de presión y caudal
+                para verificar la eficiencia del sistema.
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> Asesoría técnica especializada
+                para proyectos industriales, comerciales y residenciales.
+              </p>
+              <p class="pt-3">
+                Con nuestros servicios, aseguramos la protección de personas,
+                instalaciones y bienes frente a riesgos de incendio.
+              </p>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5 col-lg-6">
+            <div class="aboutUsBlock--img">
+              <img
+                src={mangueras1.src}
+                alt="MANGUERAS E HIDRANTES"
+                width={mangueras1.width}
+                height={mangueras1.height}
+                class="img-fluid d-block mx-auto rounded-3"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="titleGlobal alternative pb-5 mb-2 mt-3">
+    <div class="container text-center">
+      <div class="titleGlobal--data">
+        <h2>Equipos de calidad</h2>
+        <h5>
+          Diseñados para cumplir con las más estrictas normas de seguridad.
+          <span class="d-block color-red fw-bold"
+            >¡Solicita tu cotización hoy mismo!</span
+          >
+        </h5>
+      </div>
+    </div>
+  </div>
+
+  <section class="aboutUsBlock">
+    <div class="container pb-5">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-6">
+            <div class="aboutUsBlock--img">
+              <img
+                src={mangueras2.src}
+                alt="MANGUERAS CONTRA INCENDIO"
+                width={mangueras2.width}
+                height={mangueras2.height}
+                class="img-fluid d-block mx-auto"
+              />
+            </div>
+          </div>
+
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <h3 class="color-red fs-3 fw-bold">MANGUERAS CONTRA INCENDIO</h3>
+              <p class="py-3">
+                Nuestras mangueras están fabricadas con un tubo interior de
+                neopreno sintético, diseñado para resistir altas presiones y
+                temperaturas. Su recubrimiento exterior de fibras continuas de
+                poliéster 100% aporta gran durabilidad, resistencia a la
+                abrasión y protección frente a condiciones exigentes. Además,
+                cuentan con un refuerzo textil que mejora su solidez
+                estructural.
+              </p>
+              <p class="pb-3">
+                Gracias a esta combinación de materiales, ofrecen una excelente
+                flexibilidad y maniobrabilidad, lo que permite un manejo más
+                práctico y seguro durante emergencias, facilitando la respuesta
+                rápida ante cualquier situación de incendio.
+              </p>
+              <button class="btn btn-danger shadow-sm ">
+                Más información <i class="bi bi-chevron-double-right"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="aboutUsBlock" style="background-color: #f0f0f0;">
+    <div class="container">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <h3 class="color-red fs-3 fw-bold">HIDRANTES</h3>
+              <p class="pt-3">Los hidrantes son equipos de seguridad esenciales, generalmente instalados en lugares abiertos y estratégicos para garantizar un acceso rápido y eficiente al agua en caso de incendio.</p>
+              <p class="py-3">Su función principal es suministrar agua directamente desde una fuente previamente conectada, lo que permite a los bomberos responder con mayor rapidez y eficacia ante una emergencia. Esta disponibilidad inmediata puede marcar la diferencia en el control oportuno de un incendio y la protección de vidas y bienes.</p>
+              <p class="pb-3">Normalmente, los hidrantes se pintan de color rojo brillante, lo que facilita su localización inmediata incluso en condiciones adversas o de poca visibilidad. Gracias a ello, los cuerpos de emergencia pueden encontrarlos y utilizarlos sin demora.</p>
+              <button class="btn btn-danger shadow-sm ">
+                Más información <i class="bi bi-chevron-double-right"></i>
+              </button>              
+            </div>
+          </div>
+
+          <div class="col-12 col-md-5 col-lg-6">
+            <div class="aboutUsBlock--img">
+              <img
+                src={mangueras3.src}
+                alt="HIDRANTES"
+                width={mangueras3.width}
+                height={mangueras3.height}
+                class="img-fluid d-block mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="aboutUsBlock">
+    <div class="container ">
+      <div class="aboutUsBlock--grid">
+        <div class="row align-items-center">
+          <div class="col-12 col-md-5 col-lg-6">
+            <div class="aboutUsBlock--img">
+              <img
+                src={mangueras4.src}
+                alt="HERRAJES Y ACCESORIOS"
+                width={mangueras4.width}
+                height={mangueras4.height}
+                class="img-fluid d-block mx-auto"
+              />
+            </div>
+          </div>          
+          <div class="col-12 col-md-7 col-lg-6">
+            <div class="aboutUsBlock--data">
+              <h3 class="color-red fs-3 fw-bold">HERRAJES Y ACCESORIOS</h3>
+              <p class="pt-3">Los herrajes y accesorios son parte fundamental en cualquier red contra incendio, ya que aseguran su correcto funcionamiento y confiabilidad.</p>
+              <p class="py-3">Contamos con una amplia variedad de opciones, entre ellas:</p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> 
+                Chiflón de 3 Pasos
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> 
+                Niples Caña
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> 
+                Llaves para Ajustar Coples
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> 
+                Válvulas de Globo Angular
+              </p>
+              <p class="d-flex mt-2 aling-items-center gap-2">
+                <i class="bi bi-check-circle-fill"></i> 
+                Toma Siamesa
+              </p>
+              <p class="py-3">
+                Encuentra todo lo que necesitas para complementar tu sistema con calidad y seguridad.
+              </p>
+              <button class="btn btn-danger shadow-sm ">
+                Más información <i class="bi bi-chevron-double-right"></i>
+              </button>               
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
